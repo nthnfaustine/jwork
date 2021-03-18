@@ -1,61 +1,131 @@
-
 /**
- * Write a description of class Job here.
+ * Write a description of class Location here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Nathaniel Faustine
+ * @version 18 Maret 2021
  */
+
 public class Job
 {
-    // instance variables - replace the example below with your own
+    // instance variables dari class Job
     private int id;
     private String name;
     private int fee;
     private String category;
+    private Recruiter recruiter;
 
-    /**
-     * Constructor for objects of class Job
-     */
-    public Job(){
-        // initialise instance variables
+    /*
+     Constructor dari class Job
+    */
+    public Job(int id, String name, Recruiter recruiter, int fee, String category){
+        this.id = id;
+        this.recruiter = recruiter;
+        this.name = name;
+        this.fee = fee;
+        this.category = category;
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Metode untuk return id
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param     void
+     * @return    id
      */
-    
-    public static int getId(){
-        return 0;
+    public int getId(){
+        return id;
     }
     
-    public static String getName(){
-        return "oop";
+    /**
+     * Metode untuk return nama
+     *
+     * @param     void
+     * @return    nama
+     */
+    public String getName(){
+        return name;
     }
     
-    public static int getFee(){
-        return 0;
+    /**
+     * Metode untuk return fee
+     *
+     * @param     void
+     * @return    fee
+     */
+    public int getFee(){
+        return fee;
     }
     
-    public static String getCategory(){
-        return "oop";
+    /**
+     * Metode untuk return kategori job
+     *
+     * @param     void
+     * @return    kategori
+     */
+    public String getCategory(){
+        return category;
     }
     
-    public static void setId(int id){
-       
+    /**
+     * Metode untuk return rekruter
+     *
+     * @param     void
+     * @return    rekruter
+     */
+    public Recruiter getRecruiter(){
+        return recruiter;
     }
     
-    public static void setName(String name){
-       
+    /**
+     * Metode untuk merubah id
+     *
+     * @param     id
+     * @return    void
+     */
+    public void setId(int id){
+       this.id = id;
     }
     
-    public static void setFee(int fee){
-       
+    /**
+     * Metode untuk merubah nama job
+     *
+     * @param     nama
+     * @return    void
+     */
+    public void setName(String name){
+       this.name = name;
     }
     
-    public static void setCategory(String category){
+    /**
+     * Metode untuk merubah rekruter
+     *
+     * @param     rekruter
+     * @return    void
+     */
+    public void setRecruiter(Recruiter recruiter){
+       this.recruiter = recruiter;
+    }
+    
+    /**
+     * Metode untuk merubah fee
+     *
+     * @param     fee
+     * @return    void
+     */
+    public void setFee(int fee){
+        this.fee = fee;
+    }
+    
+    /**
+     * Metode untuk merubah kategori job
+     *
+     * @param     kategori
+     * @return    void
+     */
+    public void setCategory(String category){
+        this.category = category;
+    }
+    
+    public void printData(){
         
     }
 }

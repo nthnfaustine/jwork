@@ -24,6 +24,10 @@ public class JWork
      * @return    the sum of x and y
      */
     public static void main(String[] args){
-    
+        Location lokasi = new Location("Banten", "Tangerang Selatan", "testest");
+        Recruiter rekruter = new Recruiter(11, "nathan", "nathan@example.com", "123123123", lokasi);
+        Job myJob = new Job(1, "nathan", rekruter, 111111, "HRD");
+        Jobseeker myJobseeker = new Jobseeker(1, "bukannathan", "bukannathan@example.com", "password123", "18 Maret 2021");
+        Invoice jobInvoice = new Invoice(1, 2, "18 Maret 2021", 2, myJobseeker);
     }
 }

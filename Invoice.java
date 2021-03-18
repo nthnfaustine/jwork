@@ -1,60 +1,131 @@
-
 /**
- * Write a description of class Invoice here.
+ * Write a description of class Location here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Nathaniel Faustine
+ * @version 18 Maret 2021
  */
+
 public class Invoice
 {
-    // instance variables - replace the example below with your own
+    // instance variables dari Invoice
     private int id;
     private int idJob;
     private String date;
     private int totalFee;
+    private Jobseeker jobseeker;
 
     /**
-     * Constructor for objects of class Invoice
+     * Constructor dari invoice
      */
-    public Invoice(){
-
+    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker){
+        this.id = id;
+        this.idJob = idJob;
+        this.date = date;
+        this.totalFee = totalFee;
+        this.jobseeker = jobseeker;
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * metode untuk return id
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param     void
+     * @return    id
      */
-    public static int getId(){
-        return 0;
+    public int getId(){
+        return id;
     }
     
-    public static int getIdJob(){
-        return 0;
+    /**
+     * metode untuk return job id
+     *
+     * @param     void
+     * @return    job id
+     */
+    public int getIdJob(){
+        return idJob;
     }
     
-    public static String getDate(){
-        return "oop";
+    /**
+     * metode untuk return date
+     *
+     * @param     void
+     * @return    date
+     */
+    public String getDate(){
+        return date;
     }
     
-    public static int getTotalFee(){
-        return 0;
+    /**
+     * metode untuk return total fee
+     *
+     * @param     void
+     * @return    total fee
+     */
+    public int getTotalFee(){
+        return totalFee;
     }
     
-    public static void setId(int id){
-        
+    /**
+     * metode untuk merubah id
+     *
+     * @param     id
+     * @return    void
+     */
+    public void setId(int id){
+        this.id = id;
     }
     
-    public static void setIdJobs(int idJobs){
-    
+    /**
+     * metode untuk merubah job id
+     *
+     * @param     idJobs
+     * @return    void
+     */
+    public void setIdJobs(int idJobs){
+        this.idJob = idJobs;
     }
     
-    public static String setDate(String date){
-        return "";
+    /**
+     * metode untuk merubah date
+     *
+     * @param     date
+     * @return    void
+     */
+    public void setDate(String date){
+        this.date = date;
     }
     
-    public static String setTotalFee(int totalFee){
-        return "";
+    /**
+     * metode untuk merubah totalfee
+     *
+     * @param     totalFee
+     * @return    void
+     */
+    public void setTotalFee(int totalFee){
+        this.totalFee = totalFee;
+    }
+    
+    /**
+     * metode untuk return jobseeker
+     *
+     * @param     void
+     * @return    jobseeker
+     */
+    public Jobseeker getJobseeker() {
+        return jobseeker;
+    }
+    
+    /**
+     * metode untuk merubah jobseeker
+     *
+     * @param     jobseeker
+     * @return    void
+     */
+    public void setJobseeker(Jobseeker jobseeker) {
+        this.jobseeker = jobseeker;
+    }
+    
+    public void printData(){
+    
     }
 }
