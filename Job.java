@@ -127,11 +127,11 @@ public class Job
     
     public void printData(){
         System.out.println("===================== JOB =====================");
-        System.out.print("ID: " + id);
-        System.out.print("Name: " + name);
-        System.out.print("Recruiter: " + recruiter.getName());
-        System.out.print("City: " + recruiter.getLocation().getCity());
-        System.out.print("Fee: " + fee);
-        System.out.print("Category: " + category);
+        System.out.println("ID: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Recruiter: " + recruiter.getName());
+        System.out.println("City: " + recruiter.getLocation().getCity());
+        System.out.println("Fee: " + fee);
+        System.out.println("Category: " + category);
     }
 }

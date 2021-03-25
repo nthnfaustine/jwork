@@ -28,17 +28,7 @@ public class JWork
         
         Recruiter myRecruiter = new Recruiter(11, "Nathaniel", "nathan@example.com", "123123123", myLocation);
         
-        Job myJob = new Job(1, "Pekerjaan", myRecruiter, 10000, "Tech");
-        
-        Jobseeker myJobseeker = new Jobseeker(1, "bukannathan", "bukannathan@example.com", "password123", "18 Maret 2021");
-        
-        Invoice jobInvoice = new Invoice(1, 11, "18 Maret 2021", 10000, myJobseeker);
-        
-        System.out.println(myRecruiter.getName());
-        
-        myRecruiter.setName("fff");
-        
-        System.out.println(myRecruiter.getName());
+        Job myJob = new Job(1, "Pekerjaan", myRecruiter, 10000, JobCategory.WebDeveloper);
         
         myJob.printData();
         

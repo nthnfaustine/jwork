@@ -6,25 +6,38 @@
  * @version (version number or date here)
  */
 public enum JobCategory {
-    WebDeveloper, FrontEnd, BackEnd, UI, UX, Devops, DataScientist, DataAnalyst;
+    WebDeveloper("Web Developer"), FrontEnd("Front End"), BackEnd("Back End"), UI("UI"), UX("UX"), Devops("Devops"),
+    DataScientist("Data Scientist"), DataAnalyst("Data Analyst");
+
+    private String jobcategory;
+
+    private JobCategory(String category) {
+        this.jobcategory = category;
+
+    }
+
+    @Override
+    public String toString() {
+        return jobcategory;
+    }
 
     public static void main(String[] args) {
-        JobCategory category1 = JobCategory.WebDeveloper;
-        JobCategory category2 = JobCategory.FrontEnd;
-        JobCategory category3 = JobCategory.BackEnd;
-        JobCategory category4 = JobCategory.UI;
-        JobCategory category5 = JobCategory.UX;
-        JobCategory category6 = JobCategory.Devops;
-        JobCategory category7 = JobCategory.DataScientist;
-        JobCategory category8 = JobCategory.DataAnalyst;
-        System.out.println(category1);
-        System.out.println(category2);
-        System.out.println(category3);
-        System.out.println(category4);
-        System.out.println(category5);
-        System.out.println(category6);
-        System.out.println(category7);
-        System.out.println(category8);
+        JobCategory webdev = JobCategory.WebDeveloper;
+        JobCategory frontend = JobCategory.FrontEnd;
+        JobCategory backend = JobCategory.BackEnd;
+        JobCategory ui = JobCategory.UI;
+        JobCategory ux = JobCategory.UX;
+        JobCategory devops = JobCategory.Devops;
+        JobCategory datsci = JobCategory.DataScientist;
+        JobCategory datan = JobCategory.DataAnalyst;
+        System.out.println(webdev);
+        System.out.println(frontend);
+        System.out.println(backend);
+        System.out.println(ui);
+        System.out.println(ux);
+        System.out.println(devops);
+        System.out.println(datsci);
+        System.out.println(datan);
 
     }
 }

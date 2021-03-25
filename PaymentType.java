@@ -6,14 +6,20 @@
  * @version (version number or date here)
  */
 public enum PaymentType {
-    BankPayment,
-    EwalletPayment;
+    BankPayment {
+        @Override
+        public String toString(){
+            return "Bank Payment";
+        }
+    },
+    EwalletPayment {
+        @Override
+        public String toString(){
+            return "E-wallet Payment";
+        }
+    };
 
-    @Override
-    public String toString(){
-        return null;
-    }
-
+    // Driver method
     public static void main(String[] args){
         PaymentType p1 = PaymentType.BankPayment;
         System.out.println(p1);
@@ -21,4 +27,3 @@ public enum PaymentType {
         System.out.println(p2);
     }
 }
-
