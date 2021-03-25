@@ -8,27 +8,21 @@
 public class DatabaseRecruiter
 {
     // instance variables - replace the example below with your own
-    private String[] listRecruiter;
+    private static String[] listRecruiter;
 
-    public DatabaseRecruiter()
-    {
-        // initialise instance variables
-        
-    }
-
-    public boolean addRecruiter(Recruiter recruiter){
+    public static boolean addRecruiter(Recruiter recruiter){
         return false;
     }
         
-    public boolean removeRecruiter(Recruiter recruiter){
+    public static boolean removeRecruiter(Recruiter recruiter){
         return false;
     }
     
-    public Recruiter getRecruiter(){
+    public static Recruiter getRecruiter(){
         return null;
     }
     
-    public String[] getListRecruiter(){
+    public static String[] getListRecruiter(){
         return listRecruiter;
     }
 }

@@ -7,24 +7,7 @@
 
 public class DatabaseJob {
     // instance variable dari DatabaseJob
-    private String[] listJob;
-    
-    /*
-     constructor dari class DatabaseJob
-    */
-    public DatabaseJob(){
-       listJob = new String[100];
-    }
-    
-    /**
-     * metode untuk merubah list job
-     *
-     * @param     list job
-     * @return    void
-     */
-    public DatabaseJob(String[] listJob){
-        this.listJob = listJob;
-    }
+    private static String[] listJob;
     
     /**
      * metode untuk menambah job (belum diimplementasikan)
@@ -32,7 +15,7 @@ public class DatabaseJob {
      * @param     job
      * @return    boolean
      */
-    public boolean addJob(Job job){
+    public static boolean addJob(Job job){
         return false;
     }
     
@@ -42,7 +25,7 @@ public class DatabaseJob {
      * @param     job
      * @return    boolean
      */
-    public boolean remove(Job job){
+    public static boolean remove(Job job){
         return false;
     }
     
@@ -52,7 +35,7 @@ public class DatabaseJob {
      * @param     void
      * @return    null
      */
-    public Job getJob(){
+    public static Job getJob(){
         return null;
     }
     
@@ -62,7 +45,7 @@ public class DatabaseJob {
      * @param     void
      * @return    listJob
      */
-    public String[] getListJob(){
+    public static String[] getListJob(){
         return listJob;
     }
 }

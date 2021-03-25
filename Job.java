@@ -11,13 +11,13 @@ public class Job
     private int id;
     private String name;
     private int fee;
-    private String category;
     private Recruiter recruiter;
+    private JobCategory category;
 
     /*
      Constructor dari class Job
     */
-    public Job(int id, String name, Recruiter recruiter, int fee, String category){
+    public Job(int id, String name, Recruiter recruiter, int fee, JobCategory category){
         this.id = id;
         this.recruiter = recruiter;
         this.name = name;
@@ -61,7 +61,7 @@ public class Job
      * @param     void
      * @return    kategori
      */
-    public String getCategory(){
+    public JobCategory getCategory(){
         return category;
     }
     
@@ -121,11 +121,17 @@ public class Job
      * @param     kategori
      * @return    void
      */
-    public void setCategory(String category){
+    public void setCategory(JobCategory category){
         this.category = category;
     }
     
     public void printData(){
-        System.out.println(getName());
+        System.out.println("===================== JOB =====================");
+        System.out.print("ID: " + id);
+        System.out.print("Name: " + name);
+        System.out.print("Recruiter: " + recruiter.getName());
+        System.out.print("City: " + recruiter.getLocation().getCity());
+        System.out.print("Fee: " + fee);
+        System.out.print("Category: " + category);
     }
 }
