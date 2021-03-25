@@ -2,8 +2,8 @@
 /**
  * Write a description of class JWork here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Nathaniel Faustine
+ * @version 25/3/2021
  */
 public class JWork
 {

@@ -1,7 +1,7 @@
 /**
  * Write a description of class DatabaseRecruiter here.
  *
- * @author Vincentius Indra Lithgow
+ * @author Nathaniel Faustine
  * @version 25/03/2021
  */
 public class DatabaseJobSeeker
