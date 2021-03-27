@@ -13,16 +13,27 @@ public class Invoice
     private String date;
     private int totalFee;
     private Jobseeker jobseeker;
+    private PaymentType paymentType;
+    private InvoiceStatus status;
 
     /**
      * Constructor dari invoice
      */
-    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker){
+    public Invoice(
+        int id,
+        int idJob,
+        String date,
+        int totalFee,
+        Jobseeker jobseeker,
+        PaymentType paymentType,
+        InvoiceStatus status){
         this.id = id;
         this.idJob = idJob;
         this.date = date;
         this.totalFee = totalFee;
         this.jobseeker = jobseeker;
+        this.paymentType = paymentType;
+        this.status = status;
     }
 
     /**
@@ -63,6 +74,14 @@ public class Invoice
      */
     public int getTotalFee(){
         return totalFee;
+    }
+    
+    public PaymentType getPaymentType(){
+        return paymentType;
+    }
+    
+    public InvoiceStatus getInvoiceStatus(){
+        return status;
     }
     
     /**
@@ -125,7 +144,21 @@ public class Invoice
         this.jobseeker = jobseeker;
     }
     
+    public void setPaymentType(PaymentType paymentType) {
+        this.paymentType = paymentType;
+    }
+    
+    public void setJobseeker(InvoiceStatus status) {
+        this.status = status;
+    }
+    
     public void printData(){
-        System.out.println(getTotalFee());
+        System.out.println("===================== JOB =====================");
+        System.out.println("ID: " + id);
+        System.out.println("ID Job: " + idJob);
+        System.out.println("Date: " + date);
+        System.out.println("Seeker: " + jobseeker.getName());
+        System.out.println("Fee: " + totalFee);
+        System.out.println("Status: " + status);
     }
 }

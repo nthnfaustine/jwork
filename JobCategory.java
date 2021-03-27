@@ -20,24 +20,4 @@ public enum JobCategory {
     public String toString() {
         return jobcategory;
     }
-
-    public static void main(String[] args) {
-        JobCategory webdev = JobCategory.WebDeveloper;
-        JobCategory frontend = JobCategory.FrontEnd;
-        JobCategory backend = JobCategory.BackEnd;
-        JobCategory ui = JobCategory.UI;
-        JobCategory ux = JobCategory.UX;
-        JobCategory devops = JobCategory.Devops;
-        JobCategory datsci = JobCategory.DataScientist;
-        JobCategory datan = JobCategory.DataAnalyst;
-        System.out.println(webdev);
-        System.out.println(frontend);
-        System.out.println(backend);
-        System.out.println(ui);
-        System.out.println(ux);
-        System.out.println(devops);
-        System.out.println(datsci);
-        System.out.println(datan);
-
-    }
 }

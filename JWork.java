@@ -30,7 +30,11 @@ public class JWork
         
         Job myJob = new Job(1, "Pekerjaan", myRecruiter, 10000, JobCategory.WebDeveloper);
         
-        myJob.printData();
+        Jobseeker myjobseeker = new Jobseeker(99, "bebas", "bebas@gmail.com", "rahasia", "27/3/2020");
+        
+        Invoice myInvoice = new Invoice(123, myJob.getId(), "27/3/2020", myJob.getFee(), myjobseeker, PaymentType.BankPayment, InvoiceStatus.Ongoing);
+        
+        myInvoice.printData();
         
     }
 }
