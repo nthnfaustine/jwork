@@ -148,7 +148,7 @@ public class Invoice
         this.paymentType = paymentType;
     }
     
-    public void setJobseeker(InvoiceStatus status) {
+    public void setInvoiceStatus(InvoiceStatus status) {
         this.status = status;
     }
     
