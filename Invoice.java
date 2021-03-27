@@ -153,7 +153,7 @@ public class Invoice
     }
     
     public void printData(){
-        System.out.println("===================== JOB =====================");
+        System.out.println("===================== INVOICE =====================");
         System.out.println("ID: " + id);
         System.out.println("ID Job: " + idJob);
         System.out.println("Date: " + date);
