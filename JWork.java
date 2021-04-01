@@ -32,9 +32,19 @@ public class JWork
         
         Jobseeker myjobseeker = new Jobseeker(99, "bebas", "bebas@gmail.com", "rahasia", "27/3/2020");
         
-        Invoice myInvoice = new Invoice(123, myJob.getId(), "27/3/2020", myJob.getFee(), myjobseeker, PaymentType.BankPayment, InvoiceStatus.Ongoing);
+        Bonus myBonus = new Bonus(2, "myBonus", 10000, 1, true);
         
-        myInvoice.printData();
+        Bonus myBonus2 = new Bonus(2, "myBonus2", 10000, 10000000, true);
+        
+        EwalletPayment pertama = new EwalletPayment(222, myJob, "1/4/2020", myjobseeker, InvoiceStatus.Ongoing);
+        
+        EwalletPayment dua = new EwalletPayment(223, myJob, "1/4/2020", myjobseeker, InvoiceStatus.Ongoing, myBonus);
+        
+        EwalletPayment tiga = new EwalletPayment(224, myJob, "1/4/2020", myjobseeker, InvoiceStatus.Ongoing, myBonus2);
+        
+        pertama.printData();
+        dua.printData();
+        tiga.printData();
         
     }
 }
