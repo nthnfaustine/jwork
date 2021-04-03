@@ -42,9 +42,12 @@ public class JWork
         
         EwalletPayment tiga = new EwalletPayment(224, myJob, "1/4/2020", myjobseeker, InvoiceStatus.Ongoing, myBonus2);
         
-        pertama.printData();
-        dua.printData();
-        tiga.printData();
+        BankPayment test1 = new BankPayment(224, myJob, "1/4/2020", myjobseeker, InvoiceStatus.Finished);
+
+        BankPayment test2 = new BankPayment(224, myJob, "1/4/2020", myjobseeker, InvoiceStatus.Finished, 12);
+        
+        test1.printData();
+        test2.printData();
         
     }
 }
