@@ -84,7 +84,8 @@ public class Location
      * @param     void
      * @return    province
      */
-    public void printData(){
-        System.out.println(getProvince());
+    @Override
+    public String toString() {
+        return "Province = " + getProvince() + "\nCity = " + getCity() + "\nDescription = " + getDescription();
     }
 }
