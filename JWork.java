@@ -28,37 +28,37 @@ public class JWork
      * @return    the sum of x and y
      */
     public static void main(String[] args){
-        // Location myLocation = new Location("Banten", "Tangerang Selatan", "Tempat lahir");
+        Location myLocation = new Location("Banten", "Tangerang Selatan", "Tempat lahir");
         
-        // Recruiter myRecruiter = new Recruiter(11, "Nathaniel", "nathan@example.com", "123123123", myLocation);
+        Recruiter myRecruiter = new Recruiter(11, "Nathaniel", "nathan@example.com", "123123123", myLocation);
         
-        // Job myJob = new Job(1, "Pekerjaan", myRecruiter, 10000, JobCategory.WebDeveloper);
+        Job myJob = new Job(1, "Pekerjaan", myRecruiter, 10000, JobCategory.WebDeveloper);
         
-        // Jobseeker myjobseeker = new Jobseeker(99, "bebas", "bebas@gmail.com", "rahasia", "27/3/2020");
+        Jobseeker myjobseeker = new Jobseeker(99, "bebas", "bebas@gmail.com", "rahasia");
         
-        //Bonus myBonus = new Bonus(2, "myBonus", 10000, 1, true);
+        Bonus myBonus = new Bonus(2, "myBonus", 10000, 1, true);
         
-        // Bonus myBonus2 = new Bonus(2, "myBonus2", 10000, 10000000, true);
+        Bonus myBonus2 = new Bonus(2, "myBonus2", 10000, 10000000, true);
         
-        // EwalletPayment pertama = new EwalletPayment(222, myJob, "1/4/2020", myjobseeker, InvoiceStatus.Ongoing);
+        EwalletPayment pertama = new EwalletPayment(222, myJob, myjobseeker, InvoiceStatus.Ongoing);
         
-        // EwalletPayment dua = new EwalletPayment(223, myJob, "1/4/2020", myjobseeker, InvoiceStatus.Ongoing, myBonus);
+        EwalletPayment dua = new EwalletPayment(223, myJob, myjobseeker, InvoiceStatus.Ongoing, myBonus);
         
-        // EwalletPayment tiga = new EwalletPayment(224, myJob, "1/4/2020", myjobseeker, InvoiceStatus.Ongoing, myBonus2);
+        EwalletPayment tiga = new EwalletPayment(224, myJob, myjobseeker, InvoiceStatus.Ongoing, myBonus2);
         
-        // BankPayment test1 = new BankPayment(224, myJob, "1/4/2020", myjobseeker, InvoiceStatus.Finished);
+        BankPayment test1 = new BankPayment(224, myJob, myjobseeker, InvoiceStatus.Finished);
 
-        // BankPayment test2 = new BankPayment(224, myJob, "1/4/2020", myjobseeker, InvoiceStatus.Finished, 12);
+        BankPayment test2 = new BankPayment(224, myJob, myjobseeker, InvoiceStatus.Finished, 12);
         
-        // test1.printData();
-        // test2.printData();
+        tiga.toString();
+        test2.toString();
         
-        Jobseeker myJobseeker = new Jobseeker(1, "Nathan", "nathan@ui.ac.id", "Nathan123", new GregorianCalendar(2020, 1, 21));
-        Jobseeker myJobseeker1 = new Jobseeker(2, "Faustine", "nathaniel@ui.ac.id", "Nathan123", 2021, 04, 2);
-        Jobseeker myJobseeker2 = new Jobseeker(3, "Nathaniel", "nathaniel@example.com", "fff123456");
-        System.out.println(myJobseeker.toString());
-        System.out.println(myJobseeker1.toString());
-        System.out.println(myJobseeker2.toString());
+        // Jobseeker myJobseeker = new Jobseeker(1, "Nathan", "nathan@ui.ac.id", "Nathan123", new GregorianCalendar(2020, 1, 21));
+        // Jobseeker myJobseeker1 = new Jobseeker(2, "Faustine", "nathaniel@ui.ac.id", "Nathan123", 2021, 04, 2);
+        // Jobseeker myJobseeker2 = new Jobseeker(3, "Nathaniel", "nathaniel@example.com", "fff123456");
+        // System.out.println(myJobseeker.toString());
+        // System.out.println(myJobseeker1.toString());
+        // System.out.println(myJobseeker2.toString());
         
     }
 }

@@ -5,12 +5,15 @@
  * @version 18 Maret 2021
  */
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 public abstract class Invoice
 {
     // instance variables dari Invoice
     private int id;
     private Job job;
-    private String date;
+    private Calendar date;
     protected int totalFee;
     private Jobseeker jobseeker;
     private InvoiceStatus invoiceStatus;
@@ -21,15 +24,14 @@ public abstract class Invoice
     public Invoice(
         int id,
         Job job,
-        String date,
         Jobseeker jobseeker,
         InvoiceStatus invoiceStatus){
         this.id = id;
         this.job = job;
-        this.date = date;
         this.totalFee = totalFee;
         this.jobseeker = jobseeker;
         this.invoiceStatus = invoiceStatus;
+        this.date = Calendar.getInstance();
     }
 
     /**
@@ -58,7 +60,7 @@ public abstract class Invoice
      * @param     void
      * @return    date
      */
-    public String getDate(){
+    public Calendar getDate(){
         return date;
     }
     
@@ -104,8 +106,12 @@ public abstract class Invoice
      * @param     date
      * @return    void
      */
-    public void setDate(String date){
+    public void setDate(Calendar date){
         this.date = date;
+    }
+    
+    public void setDate(int year, int month, int dayOfMonth){
+        this.date = new GregorianCalendar(year, month, dayOfMonth);
     }
     
     /**
@@ -140,5 +146,5 @@ public abstract class Invoice
         this.invoiceStatus = invoiceStatus;
     }
     
-    public abstract void printData();
+    public abstract String toString();
 }

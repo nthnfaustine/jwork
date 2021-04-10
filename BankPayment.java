@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat;
+
 /**
  * Write a description of class BankPayment here.
  *
@@ -9,12 +11,12 @@ public class BankPayment extends Invoice{
     private int adminFee;
     private static final PaymentType PAYMENT_TYPE = PaymentType.EwalletPayment;
     
-    public BankPayment(int id, Job job, String date, Jobseeker jobseeker,InvoiceStatus invoiceStatus){
-        super(id, job, date, jobseeker, invoiceStatus);
+    public BankPayment(int id, Job job, Jobseeker jobseeker,InvoiceStatus invoiceStatus){
+        super(id, job, jobseeker, invoiceStatus);
     }
     
-    public BankPayment(int id, Job job, String date, Jobseeker jobseeker,InvoiceStatus invoiceStatus, int adminFee){
-        super(id, job, date, jobseeker, invoiceStatus);
+    public BankPayment(int id, Job job, Jobseeker jobseeker,InvoiceStatus invoiceStatus, int adminFee){
+        super(id, job, jobseeker, invoiceStatus);
         this.adminFee = adminFee;
     }
     
@@ -41,11 +43,13 @@ public class BankPayment extends Invoice{
     }
     
     @Override
-    public void printData() {
+    public String toString() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMMM-yyyy");
+        String date = dateFormat.format(getDate().getTime());
         System.out.println("===================== INVOICE =====================");
         System.out.println("ID: " + getId());
         System.out.println("Job: " + getJob().getName());
-        System.out.println("Date: " + getDate());
+        System.out.println("Date: " + date);
         System.out.println("Job Seeker: " + getJobseeker().getName());
         
         setTotalFee();
@@ -53,5 +57,6 @@ public class BankPayment extends Invoice{
         System.out.println("Total Fee: " + getTotalFee());
         System.out.println("Status: " + getInvoiceStatus());
         System.out.println("Payment Type: " + PAYMENT_TYPE);
+        return "";
     }
 }

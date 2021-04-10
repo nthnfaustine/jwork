@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=BankPayment
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ BankPayment\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=id\ job\ date\ jobseeker\ invoiceStatus
-comment1.target=BankPayment(int,\ Job,\ java.lang.String,\ Jobseeker,\ InvoiceStatus)
-comment2.params=id\ job\ date\ jobseeker\ invoiceStatus\ adminFee
-comment2.target=BankPayment(int,\ Job,\ java.lang.String,\ Jobseeker,\ InvoiceStatus,\ int)
+comment1.params=id\ job\ jobseeker\ invoiceStatus
+comment1.target=BankPayment(int,\ Job,\ Jobseeker,\ InvoiceStatus)
+comment2.params=id\ job\ jobseeker\ invoiceStatus\ adminFee
+comment2.target=BankPayment(int,\ Job,\ Jobseeker,\ InvoiceStatus,\ int)
 comment3.params=
 comment3.target=void\ setTotalFee()
 comment4.params=
@@ -14,5 +14,5 @@ comment5.target=int\ getAdminFee()
 comment6.params=adminFee
 comment6.target=void\ setAdminFee(int)
 comment7.params=
-comment7.target=void\ printData()
+comment7.target=java.lang.String\ toString()
 numComments=8
