@@ -46,7 +46,7 @@ public class EwalletPayment extends Invoice{
     public String toString() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMMM-yyyy");
         String date = dateFormat.format(getDate().getTime());
-        System.out.println("===================== INVOICE =====================");
+        System.out.println("===================== E-WALLET PAYMENT =====================");
         System.out.println("ID: " + getId());
         System.out.println("Job: " + getJob().getName());
         System.out.println("Date: " + date);
