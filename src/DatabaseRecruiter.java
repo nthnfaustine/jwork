@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 /**
  * Write a description of class DatabaseRecruiter here.
@@ -7,22 +8,44 @@
  */
 public class DatabaseRecruiter
 {
-    // instance variables - replace the example below with your own
-    private static String[] listRecruiter;
+    private static ArrayList<Recruiter> RECRUITER_DATABASE = new ArrayList<Recruiter>();
+    private static int lastId = 0;
 
-    public static boolean addRecruiter(Recruiter recruiter){
-        return false;
+    public static ArrayList<Recruiter> getRecruiterDatabase() {
+        return RECRUITER_DATABASE;
     }
-        
-    public static boolean removeRecruiter(Recruiter recruiter){
-        return false;
+
+    public static int getLastId() {
+        return lastId;
     }
-    
-    public static Recruiter getRecruiter(){
-        return null;
+
+    public static Recruiter getRecruiterById(int id)
+    {
+        Recruiter tempVar = null;
+        for (Recruiter recruiter: RECRUITER_DATABASE) {
+            if (id == recruiter.getId()){
+                tempVar = recruiter;
+            }
+        }
+        return tempVar;
     }
-    
-    public static String[] getListRecruiter(){
-        return listRecruiter;
+
+    public static boolean addRecruiter(Recruiter recruiter)
+    {
+        RECRUITER_DATABASE.add(recruiter);
+        lastId = recruiter.getId();
+        return true;
+    }
+
+    public static boolean removeRecruiter(int id)
+    {
+        boolean tempBool = false;
+        for (Recruiter recruiter: RECRUITER_DATABASE) {
+            if (id == recruiter.getId()){
+                RECRUITER_DATABASE.remove(id);
+                tempBool = true;
+            }
+        }
+        return tempBool;
     }
 }

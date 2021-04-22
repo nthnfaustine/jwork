@@ -1,46 +1,58 @@
-/**
- * Write a description of class DatabaseRecruiter here.
- *
- * @author Nathaniel Faustine
- * @version 25/03/2021
- */
-public class DatabaseJobSeeker
-{
-    static private String[] listJobSeeker;
-    
-    /**
-     * Sebuah method untuk menambahkan data ke listRecruiter
-     * Method ini masih kosong
-     */
-    static public boolean addJobSeeker(Jobseeker jobseeker)
-    {
+import java.util.ArrayList;
+
+public class DatabaseJobSeeker {
+    private static ArrayList<Jobseeker> JOBSEEKER_DATABASE = new ArrayList<Jobseeker>();
+    private static int lastId = 0;
+
+    public static ArrayList<Jobseeker> getDatabaseJobseeker() {
+        return JOBSEEKER_DATABASE;
+    }
+
+    public static int getLastId() {
+        return lastId;
+    }
+
+    public static Jobseeker getJobseekerById(int id) {
+        Jobseeker x = null;
+        for (Jobseeker jobseeker : JOBSEEKER_DATABASE) {
+            if (id == jobseeker.getId()) {
+                x = jobseeker;
+            }
+        }
+        return x;
+    }
+
+    public static boolean addJobseeker(Jobseeker jobseeker) {
+        boolean result = false;
+        if (JOBSEEKER_DATABASE.size() == 0){
+            JOBSEEKER_DATABASE.add(jobseeker);
+            lastId = jobseeker.getId();
+            result = true;
+            return result;
+        }
+        for (int i = 0; i < JOBSEEKER_DATABASE.size(); i++) {
+            if (jobseeker.getEmail().equals(JOBSEEKER_DATABASE.get(i).getEmail())) {
+                System.out.println("Email has been registered");
+                result = false;
+                return result;
+            } else {
+                JOBSEEKER_DATABASE.add(jobseeker);
+                lastId = jobseeker.getId();
+                result = true;
+                return result;
+            }
+
+        }
+        return result;
+    }
+
+    public static boolean removeJobseeker(int id) {
+        for (Jobseeker jobseeker : JOBSEEKER_DATABASE) {
+            if (jobseeker.getId() == jobseeker.getId()) {
+                JOBSEEKER_DATABASE.remove(jobseeker);
+                return true;
+            }
+        }
         return false;
-    }
-    
-    /**
-     * Sebuah method untuk mengurangi data dari listRecruiter
-     * Method ini masih kosong
-     */
-    static public boolean removeJobSeeker(Jobseeker jobseeker)
-    {
-        return false;
-    }
-    
-    /**
-     * Sebuah getter untuk mendapatkan sebuah perekrut
-     * getter ini masih kosong
-     */
-    static public Job getJobSeeker()
-    {
-        return null;
-    }
-    
-    /**
-     * Sebuah getter untuk mendapatkan list dari perekrut
-     * @return listRecruiter merupakan daftar dari perekrut
-     */
-    static public String[] getListJobSeeker()
-    {
-        return listJobSeeker;
     }
 }

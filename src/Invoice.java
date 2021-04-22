@@ -5,6 +5,7 @@
  * @version 18 Maret 2021
  */
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -12,7 +13,7 @@ public abstract class Invoice
 {
     // instance variables dari Invoice
     private int id;
-    private Job job;
+    private ArrayList<Job> jobs;
     private Calendar date;
     protected int totalFee;
     private Jobseeker jobseeker;
@@ -23,53 +24,28 @@ public abstract class Invoice
      */
     public Invoice(
         int id,
-        Job job,
-        Jobseeker jobseeker,
-        InvoiceStatus invoiceStatus){
+        ArrayList<Job> jobs,
+        Jobseeker jobseeker){
         this.id = id;
-        this.job = job;
+        this.jobs = jobs;
         this.totalFee = totalFee;
         this.jobseeker = jobseeker;
-        this.invoiceStatus = invoiceStatus;
+        this.invoiceStatus = InvoiceStatus.Ongoing;
         this.date = Calendar.getInstance();
     }
 
-    /**
-     * metode untuk return id
-     *
-     * @param     void
-     * @return    id
-     */
     public int getId(){
         return id;
     }
-    
-    /**
-     * metode untuk return job id
-     *
-     * @param     void
-     * @return    job id
-     */
-    public Job getJob(){
-        return job;
+
+    public ArrayList<Job> getJobs(){
+        return jobs;
     }
-    
-    /**
-     * metode untuk return date
-     *
-     * @param     void
-     * @return    date
-     */
+
     public Calendar getDate(){
         return date;
     }
-    
-    /**
-     * metode untuk return total fee
-     *
-     * @param     void
-     * @return    total fee
-     */
+
     public int getTotalFee(){
         return totalFee;
     }
@@ -79,33 +55,15 @@ public abstract class Invoice
     }
     
     public abstract PaymentType getPaymentType();
-    
-    /**
-     * metode untuk merubah id
-     *
-     * @param     id
-     * @return    void
-     */
+
     public void setId(int id){
         this.id = id;
     }
-    
-    /**
-     * metode untuk merubah job id
-     *
-     * @param     idJobs
-     * @return    void
-     */
-    public void setJob(Job job){
-        this.job = job;
+
+    public void setJobs(ArrayList<Job> jobs){
+        this.jobs = jobs;
     }
-    
-    /**
-     * metode untuk merubah date
-     *
-     * @param     date
-     * @return    void
-     */
+
     public void setDate(Calendar date){
         this.date = date;
     }
@@ -113,31 +71,13 @@ public abstract class Invoice
     public void setDate(int year, int month, int dayOfMonth){
         this.date = new GregorianCalendar(year, month, dayOfMonth);
     }
-    
-    /**
-     * metode untuk merubah totalfee
-     *
-     * @param     totalFee
-     * @return    void
-     */
+
     public abstract void setTotalFee();
-    
-    /**
-     * metode untuk return jobseeker
-     *
-     * @param     void
-     * @return    jobseeker
-     */
+
     public Jobseeker getJobseeker() {
         return jobseeker;
     }
-    
-    /**
-     * metode untuk merubah jobseeker
-     *
-     * @param     jobseeker
-     * @return    void
-     */
+
     public void setJobseeker(Jobseeker jobseeker) {
         this.jobseeker = jobseeker;
     }
