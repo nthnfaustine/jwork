@@ -6,6 +6,7 @@
  * @version 25/3/2021
  */
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -41,6 +42,24 @@ public class JWork
 
         System.out.println("\n=====================Job Database By Category====================\n");
         System.out.println(DatabaseJob.getJobByCategory(JobCategory.DataAnalyst));
+
+        DatabaseBonus.addBonus(new Bonus(DatabaseBonus.getLastId() + 1, "abc", 10, 1, false));
+        DatabaseBonus.addBonus(new Bonus(DatabaseBonus.getLastId() + 1, "abc", 10, 1, false));
+
+        System.out.println("\n=====================Bonus Database====================\n");
+        System.out.println(DatabaseBonus.getBonusDatabase());
+
+        ArrayList<Job> myJob = new ArrayList<Job>();
+        ArrayList<Job> myJob1 = new ArrayList<Job>();
+
+        myJob.add(new Job(10, "Backend Engineer BukaLapak", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.BackEnd));
+        myJob1.add(new Job(11, "Backend Engineer BukaLapak", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.BackEnd));
+
+        Jobseeker jbs = new Jobseeker(1, "abc", "abc@gmail.com", "abc123");
+
+        DatabaseInvoice.addInvoice(new BankPayment(9, myJob, jbs));
+        DatabaseInvoice.addInvoice(new EwalletPayment(10, myJob, jbs));
+
 
     }
 }
