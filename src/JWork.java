@@ -60,6 +60,9 @@ public class JWork
         DatabaseInvoice.addInvoice(new BankPayment(9, myJob, jbs));
         DatabaseInvoice.addInvoice(new EwalletPayment(10, myJob, jbs));
 
+        System.out.println("\n=====================Invoice Database====================\n");
+        System.out.println(DatabaseInvoice.getInvoiceDatabase());
+
 
     }
 }
