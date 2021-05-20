@@ -7,6 +7,7 @@ import java.util.ArrayList;
  * @author Nathaniel Faustine
  * @version 25/3/2021
  */
+
 public class DatabaseRecruiter
 {
     private static ArrayList<Recruiter> RECRUITER_DATABASE = new ArrayList<Recruiter>();
