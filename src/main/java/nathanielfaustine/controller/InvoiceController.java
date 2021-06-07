@@ -28,12 +28,9 @@ public class InvoiceController {
         return invoice;
     }
 
-    @RequestMapping("/jobseeker/{JobseekerId}")
+    @RequestMapping("/jobseeker/{jobseekerId}")
     public ArrayList<Invoice> getInvoiceByJobseeker(@PathVariable int jobseekerId) {
-        ArrayList<Invoice> invoice = null;
-        invoice = DatabaseInvoice.getInvoiceByJobseeker(jobseekerId);
-
-        return invoice;
+        return DatabaseInvoice.getInvoiceByJobseeker(jobseekerId);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
@@ -66,7 +63,7 @@ public class InvoiceController {
                                   @RequestParam(value = "jobseekerId") int jobseekerId,
                                   @RequestParam(value = "adminFee") int adminFee) {
         Invoice invoice = null;
-        ArrayList<Job> jobs = null;
+        ArrayList<Job> jobs = new ArrayList<>();
         for (Integer integer : jobIdList) {
             try {
                 jobs.add(DatabaseJob.getJobById(integer));
@@ -98,7 +95,7 @@ public class InvoiceController {
                                      @RequestParam(value = "jobseekerId") int jobseekerId,
                                      @RequestParam(value = "referralCode") String referralCode) {
         Invoice invoice = null;
-        ArrayList<Job> jobs = null;
+        ArrayList<Job> jobs = new ArrayList<>();
         for (Integer integer : jobIdList) {
             try {
                 jobs.add(DatabaseJob.getJobById(integer));

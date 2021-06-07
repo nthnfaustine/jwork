@@ -3,7 +3,7 @@ package nathanielfaustine.controller;
 import nathanielfaustine.jwork.*;
 import org.springframework.web.bind.annotation.*;
 
-import static nathanielfaustine.jwork.DatabaseJobSeeker.getJobseekerLogin;
+import static nathanielfaustine.jwork.DatabaseJobseekerPostgre.getJobseekerLogin;
 
 @RequestMapping("/jobseeker")
 @RestController
@@ -18,8 +18,8 @@ public class JobseekerController {
     public Jobseeker getJobseekerById(@PathVariable int id) {
         Jobseeker jobseeker = null;
         try {
-            jobseeker = DatabaseJobSeeker.getJobseekerById(id);
-        } catch (JobSeekerNotFoundException e) {
+            jobseeker = DatabaseJobseekerPostgre.getJobseekerById(id);
+        } catch (Exception e) {
             e.getMessage();
             return null;
         }
@@ -31,10 +31,10 @@ public class JobseekerController {
                                   @RequestParam(value="email") String email,
                                   @RequestParam(value="password") String password)
     {
-        Jobseeker jobseeker = new Jobseeker(DatabaseJobSeeker.getLastId()+1, name, email, password);
+        Jobseeker jobseeker = new Jobseeker(DatabaseJobseekerPostgre.getLastId()+1, name, email, password);
         try {
-            DatabaseJobSeeker.addJobseeker(jobseeker);
-        } catch (EmailAlreadyExistsException e) {
+            DatabaseJobseekerPostgre.addJobseeker(jobseeker);
+        } catch (Exception e) {
             e.getMessage();
             return null;
         }
