@@ -72,9 +72,9 @@ public class InvoiceController {
             }
         }
         try {
-            invoice = new BankPayment(DatabaseInvoice.getLastId() + 1, jobs, DatabaseJobSeeker.getJobseekerById(jobseekerId), adminFee);
+            invoice = new BankPayment(DatabaseInvoice.getLastId() + 1, jobs, DatabaseJobseekerPostgre.getJobseekerById(jobseekerId), adminFee);
             invoice.setTotalFee();
-        } catch (JobSeekerNotFoundException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         boolean status = false;
@@ -104,9 +104,9 @@ public class InvoiceController {
             }
         }
         try {
-            invoice = new EwalletPayment(DatabaseInvoice.getLastId() + 1, jobs, DatabaseJobSeeker.getJobseekerById(jobseekerId), DatabaseBonus.getBonusByRefferalCode(referralCode));
+            invoice = new EwalletPayment(DatabaseInvoice.getLastId() + 1, jobs, DatabaseJobseekerPostgre.getJobseekerById(jobseekerId), DatabaseBonus.getBonusByRefferalCode(referralCode));
             invoice.setTotalFee();
-        } catch (JobSeekerNotFoundException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         boolean status = false;
