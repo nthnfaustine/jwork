@@ -34,8 +34,11 @@ public class JWork {
             e.printStackTrace();
         }
 
-
-
+        try {
+            DatabaseBonus.addBonus(new Bonus(1, "REFCODE", 200, 1000, true));
+        } catch (ReferralCodeAlreadyExistsException e) {
+            e.printStackTrace();
+        }
 
         SpringApplication.run(JWork.class, args);
     }
