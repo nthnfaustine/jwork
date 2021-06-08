@@ -4,10 +4,18 @@ import nathanielfaustine.jwork.*;
 import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 
+/**
+ * Control for Invoice
+ *
+ * @author (Nathaniel Faustine)
+ * @version (8-6-2021)
+ */
+
 @RequestMapping("/invoice")
 @RestController
 public class InvoiceController {
 
+    // return all invoices
     @RequestMapping("")
     public ArrayList<Invoice> getAllInvoice() {
         ArrayList<Invoice> invoice = null;
@@ -16,6 +24,7 @@ public class InvoiceController {
         return invoice;
     }
 
+    // return an invoice with specific id
     @RequestMapping("/{id}")
     public Invoice getInvoiceById(@PathVariable int id) {
         Invoice invoice = null;
@@ -28,11 +37,13 @@ public class InvoiceController {
         return invoice;
     }
 
+    // return invoice by jobseeker id
     @RequestMapping("/jobseeker/{jobseekerId}")
     public ArrayList<Invoice> getInvoiceByJobseeker(@PathVariable int jobseekerId) {
         return DatabaseInvoice.getInvoiceByJobseeker(jobseekerId);
     }
 
+    // delete an invoice by its id
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public boolean removeInvoice(@PathVariable int id) {
         try {
@@ -44,6 +55,7 @@ public class InvoiceController {
         return false;
     }
 
+    // change an invoice status (Ongoing, Finished, or Canceled)
     @RequestMapping(value = "invoiceStatus/{id}", method = RequestMethod.PUT)
     public Invoice changeInvoiceStatus(@PathVariable int id,
                                        @RequestParam(value = "status") InvoiceStatus status){
@@ -58,6 +70,7 @@ public class InvoiceController {
         }
     }
 
+    // create new BankPayment invoice
     @RequestMapping(value = "createBankPayment", method = RequestMethod.POST)
     public Invoice addBankPayment(@RequestParam(value = "jobIdList") ArrayList<Integer> jobIdList,
                                   @RequestParam(value = "jobseekerId") int jobseekerId,
@@ -90,6 +103,7 @@ public class InvoiceController {
         }
     }
 
+    // create a new Ewallet payment invoice
     @RequestMapping(value = "createEWalletPayment", method = RequestMethod.POST)
     public Invoice addEWalletPayment(@RequestParam(value = "jobIdList") ArrayList<Integer> jobIdList,
                                      @RequestParam(value = "jobseekerId") int jobseekerId,

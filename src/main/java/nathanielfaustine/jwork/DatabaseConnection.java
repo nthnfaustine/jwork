@@ -7,7 +7,6 @@ import java.sql.Statement;
 public class DatabaseConnection {
     public static Connection connection () {
         Connection c = null;
-        Statement stat = null;
         String db_name = "jwork";
         String db_user = "postgres";
         String db_password = "root";

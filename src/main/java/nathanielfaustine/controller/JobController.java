@@ -4,10 +4,18 @@ import nathanielfaustine.jwork.*;
 import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 
+/**
+ * Control for Jobs
+ *
+ * @author (Nathaniel Faustine)
+ * @version (8-6-2021)
+ */
+
 @RequestMapping("/job")
 @RestController
 public class JobController {
 
+    // return all jobs
     @RequestMapping("")
     public ArrayList<Job> getAllJob() {
         ArrayList<Job> job = null;
@@ -16,6 +24,7 @@ public class JobController {
         return job;
     }
 
+    // return a job with an id
     @RequestMapping("/{id}")
     public Job getJobById(@PathVariable int id) {
         Job job = null;
@@ -28,6 +37,7 @@ public class JobController {
         return job;
     }
 
+    // return a job by its recruiter id
     @RequestMapping("/recruiter/{recruiterId}")
     public ArrayList<Job> getJobByRecruiter(@PathVariable int recruiterId) {
         ArrayList<Job> job = null;
@@ -36,6 +46,7 @@ public class JobController {
         return job;
     }
 
+    // return jobs by its category
     @RequestMapping("/category/{category}")
     public ArrayList<Job> getJobByCategory(@PathVariable JobCategory category) {
         ArrayList<Job> job = null;
@@ -43,12 +54,12 @@ public class JobController {
         return job;
     }
 
+    // add a new job
     @RequestMapping(value = "", method = RequestMethod.POST)
     public Job addJob(@RequestParam(value="name") String name,
                       @RequestParam(value="fee") int fee,
                       @RequestParam(value="category") String category,
-                      @RequestParam(value="recruiterId") int recruiterId)
-    {
+                      @RequestParam(value="recruiterId") int recruiterId) {
         Job job = null;
         try {
             job = new Job(DatabaseJob.getLastId()+1, name, DatabaseRecruiter.getRecruiterById(recruiterId), fee, JobCategory.valueOf(category));
@@ -62,5 +73,4 @@ public class JobController {
             return null;
         }
     }
-
 }
